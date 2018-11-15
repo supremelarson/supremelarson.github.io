@@ -28,10 +28,12 @@
   </head>
 
   <body id="page-top">
-
+    <p class="lead">Welcome to Larson Land. </p>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
       <div class="container">
+
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Welcome to Larson Land</a>
         <button class="navbar-toggler navbar-toggler-right text-uppercase bg-primary text-white rounded" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           Menu
@@ -413,7 +415,16 @@
 
     <!-- Custom scripts for this template -->
     <script src="js/freelancer.min.js"></script>
-
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+// When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {scrollFunction()};
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    document.getElementById("myBtn").style.display = "block";
+} else {
+document.getElementById("myBtn").style.display = "none";
+}
+}
   </body>
 
 </html>
