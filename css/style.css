@@ -14,3 +14,9 @@
   #myBtn:hover {
   background-color: #555;
   }
+  .w-100 {
+    width: 50%!important;
+    margin-left: auto;
+    margin-right:auto;
+;
+}
