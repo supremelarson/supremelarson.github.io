@@ -24,14 +24,15 @@
 
     <!-- Custom styles for this template -->
     <link href="css/freelancer.min.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="css/style.css">
   </head>
 
   <body id="page-top">
-    <p class="lead">Welcome to Larson Land. </p>
-    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg bg-secondary fixed-top text-uppercase" id="mainNav">
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
       <div class="container">
 
         <a class="navbar-brand js-scroll-trigger" href="#page-top">Welcome to Larson Land</a>
@@ -62,6 +63,7 @@
         <h1 class="text-uppercase mb-0">Lets Learn about me</h1>
         <hr class="star-light">
         <h2 class="font-weight-light mb-0">Business Law Student passionate about videogames and startups.</h2>
+          <p class="lead">Welcome to Larson Land. </p>
       </div>
     </header>
 
@@ -166,7 +168,8 @@
           <div class="col-lg-8 mx-auto">
             <!-- To configure the contact form email address, go to mail/contact_me.php and update the email address in the PHP file on line 19. -->
             <!-- The form should work on most web servers, but if the form is not working you may need to configure your web server differently. -->
-            <form method="POST" action="https://formspree.io/alarson26biz@gmail.com" >
+            <!--form method="POST" action="https://formspree.io/alarson26biz@gmail.com" -->
+            <form id="add-user-input">
               <div class="control-group">
                 <div class="form-group floating-label-form-group controls mb-0 pb-2">
                   <label>Name</label>
@@ -400,7 +403,22 @@
         </div>
       </div>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
 
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDbgU9LwAlQrn5Fdiotl3lRmQymMYuWbZ0",
+        authDomain: "alexlarsonhtml.firebaseapp.com",
+        databaseURL: "https://alexlarsonhtml.firebaseio.com",
+        projectId: "alexlarsonhtml",
+        storageBucket: "",
+        messagingSenderId: "1057705645788"
+      };
+      firebase.initializeApp(config);
+      var db = firebase.firestore();
+    </script>
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -419,12 +437,24 @@
     <script>
 // When the user scrolls down 20px from the top of the document, show the button
   window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("myBtn").style.display = "block";
 } else {
 document.getElementById("myBtn").style.display = "none";
 }
 }
+
+function topFunction() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+document.getElementsByClassName('lead')[0].style.color = "blue";
+document.getElementsByClassName('lead')[0].style.fontSize = "3em";
+document.getElementsByClassName('lead')[0].innerHTML = 'Thank you for visiting';
+}
+</script>
+<script src="js/addData.js"></script>
   </body>
 
 </html>
